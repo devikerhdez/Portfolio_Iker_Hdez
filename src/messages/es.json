@@ -1,0 +1,72 @@
+{
+  "Navbar": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "bgName": "IKER",
+    "role": "Programador Full Stack",
+    "fullName": "Iker Hernández Santana",
+    "description": "Liderazgo técnico centrado en la escalabilidad y el código limpio. Transformo problemas complejos en soluciones eficientes mediante stacks modernos, una sólida gestión de infraestructura y potenciadas por automatización con IA.",
+    "scroll": "SCROLL"
+  },
+  "Experience": {
+    "title": "EXPERIENCIA",
+    "items": [
+      {
+        "id": 1,
+        "company": "Studio Obsidian",
+        "role": "Lead Frontend Developer",
+        "date": "2025 - Presente",
+        "description": "Liderando la transición de sistemas heredados a arquitecturas modernas basadas en React. Implementando experiencias web inmersivas de alta gama con Framer Motion y Three.js."
+      },
+      {
+        "id": 2,
+        "company": "Cybernetic Apps",
+        "role": "Desarrollador Fullstack",
+        "date": "2023 - 2025",
+        "description": "Desarrollo y mantenimiento de plataformas de comercio electrónico altamente escalables. Mejora del rendimiento en un 30% mediante optimización de caché y carga diferida."
+      },
+      {
+        "id": 3,
+        "company": "Freelance",
+        "role": "Desarrollador Creativo",
+        "date": "2021 - 2023",
+        "description": "Diseño y construcción de portafolios personalizados y páginas de aterrizaje para agencias creativas, con un enfoque en accesibilidad, SEO y rendimiento web extremo."
+      }
+    ]
+  },
+  "Projects": {
+    "title": "PROYECTOS",
+    "viewMore": "Más info",
+    "viewLess": "Menos info",
+    "repo": "Código",
+    "live": "En vivo",
+    "items": [
+      {
+        "id": 1,
+        "name": "Project Vektor",
+        "description": "Un ecosistema digital construido con React, Node.js y Framer Motion. Este proyecto redefine la interfaz estándar combinando una arquitectura robusta con micro-interacciones fluidas y una estética de modo oscuro.",
+        "year": "2025"
+      },
+      {
+        "id": 2,
+        "name": "Aether API",
+        "description": "Servicio backend de alto rendimiento con documentación exhaustiva. Integración de caché Redis y un enfoque de microservicios escalable.",
+        "year": "2025"
+      },
+      {
+        "id": 3,
+        "name": "Nexus UI",
+        "description": "Una biblioteca de componentes React de código abierto centrada en temas brutalistas y oscuros. Altamente personalizable y construida completamente desde cero usando CSS.",
+        "year": "2024"
+      }
+    ]
+  },
+  "Footer": {
+    "copyright": "© 2026 Iker Hernández Santana. Todos los derechos reservados.",
+    "builtBy": "Diseñado y construido por Iker Hernández Santana"
+  }
+}
