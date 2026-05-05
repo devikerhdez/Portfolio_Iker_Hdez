@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 
 const Experience = lazy(() => import('./components/Experience'));
+const TechStack = lazy(() => import('./components/TechStack'));
 const Projects = lazy(() => import('./components/Projects'));
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
         
         <Suspense fallback={<div className="h-64 flex items-center justify-center text-red-primary font-mono text-sm animate-pulse">LOADING EXPERIENCE_</div>}>
           <Experience />
+        </Suspense>
+
+        <Suspense fallback={<div className="h-64 flex items-center justify-center text-red-primary font-mono text-sm animate-pulse">LOADING STACK_</div>}>
+          <TechStack />
         </Suspense>
 
         <Suspense fallback={<div className="h-64 flex items-center justify-center text-red-primary font-mono text-sm animate-pulse">LOADING PROJECTS_</div>}>

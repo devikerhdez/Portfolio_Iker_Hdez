@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFilePdf } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
@@ -18,10 +18,10 @@ export default function Footer() {
         
         <div className="flex justify-center flex-wrap gap-8 mb-12">
           {[
-            { icon: FaGithub, href: "https://github.com/ikerhernandez" },
-            { icon: FaLinkedin, href: "#" },
-            { icon: FaInstagram, href: "#" },
-            { icon: FaEnvelope, href: "mailto:hello@example.com" }
+            { icon: FaGithub, href: "https://github.com/devikerhdez" },
+            { icon: FaLinkedin, href: "https://www.linkedin.com/in/iker-hernandez-santana" },
+            { icon: FaEnvelope, href: "mailto:devikerhdez@gmail.com" },
+            { icon: FaFilePdf, href: "/iker_cv.pdf" }
           ].map((item, i) => (
             <a 
               key={i} 
@@ -36,9 +36,6 @@ export default function Footer() {
         </div>
 
         <div className="text-center space-y-4">
-          <p className="font-mono text-sm text-gray-300">
-            {t('Footer.copyright')}
-          </p>
           <p className="font-mono text-xs text-gray-600">
             {t('Footer.builtBy')}
           </p>

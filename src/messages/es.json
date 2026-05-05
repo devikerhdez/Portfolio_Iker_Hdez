@@ -2,6 +2,7 @@
   "Navbar": {
     "about": "Sobre mí",
     "experience": "Experiencia",
+    "stack": "Stack",
     "projects": "Proyectos",
     "contact": "Contacto"
   },
@@ -9,7 +10,7 @@
     "bgName": "IKER",
     "role": "Programador Full Stack",
     "fullName": "Iker Hernández Santana",
-    "description": "Liderazgo técnico centrado en la escalabilidad y el código limpio. Transformo problemas complejos en soluciones eficientes mediante stacks modernos, una sólida gestión de infraestructura y potenciadas por automatización con IA.",
+    "description": "Centrado en la escalabilidad y el código limpio. Transformo problemas complejos en soluciones eficientes mediante stacks modernos, siempre buscando nuevas maneras de superarme.",
     "scroll": "SCROLL"
   },
   "Experience": {
@@ -17,24 +18,24 @@
     "items": [
       {
         "id": 1,
-        "company": "Studio Obsidian",
-        "role": "Lead Frontend Developer",
-        "date": "2025 - Presente",
-        "description": "Liderando la transición de sistemas heredados a arquitecturas modernas basadas en React. Implementando experiencias web inmersivas de alta gama con Framer Motion y Three.js."
+        "company": "LU(G)AR GESTIÓN CULTURAL",
+        "role": "Desarrollador Full Stack",
+        "date": "03/2026 - 06/2026",
+        "description": "Realización de un CRM para la gestión completa de la actividad de la empresa, desde 0 con multiples modulos desarrollados como fichaje con geolocalizacion, conexión con api externa para obtención de contratos de sevicios interesantes para la empresa, etc."
       },
       {
         "id": 2,
-        "company": "Cybernetic Apps",
-        "role": "Desarrollador Fullstack",
-        "date": "2023 - 2025",
-        "description": "Desarrollo y mantenimiento de plataformas de comercio electrónico altamente escalables. Mejora del rendimiento en un 30% mediante optimización de caché y carga diferida."
+        "company": "Directaxi Canarias S.L.",
+        "role": "Desarrollador Full Stack",
+        "date": "02/2026 - 03/2026",
+        "description": "Desarrollo y mantenimiento del CRM de la empresa, donde se realizaron modulos varios como inventario en tiempo real, tareas asignadas, etc."
       },
       {
         "id": 3,
-        "company": "Freelance",
-        "role": "Desarrollador Creativo",
-        "date": "2021 - 2023",
-        "description": "Diseño y construcción de portafolios personalizados y páginas de aterrizaje para agencias creativas, con un enfoque en accesibilidad, SEO y rendimiento web extremo."
+        "company": "LU(G)AR GESTIÓN CULTURAL",
+        "role": "Desarrollador Full Stack",
+        "date": "05/2025 - 06/2025",
+        "description": "Actividades varias como desarrollo de una pagina web para una exposición de Alonso Quesada o Scraping de datos de diferentes fuentes para obtener información relevante para la empresa."
       }
     ]
   },
@@ -47,26 +48,52 @@
     "items": [
       {
         "id": 1,
-        "name": "Project Vektor",
-        "description": "Un ecosistema digital construido con React, Node.js y Framer Motion. Este proyecto redefine la interfaz estándar combinando una arquitectura robusta con micro-interacciones fluidas y una estética de modo oscuro.",
-        "year": "2025"
+        "name": "K'7 CafesApp",
+        "description": "Una app web enfocada en la digitalización de las cafeterías escolares, mejorando la productividad de los trabajadores y la experiencia de los alumnos.",
+        "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Supabase", "Docker", "Vercel", "Render"],
+        "year": "2026",
+        "github": "https://github.com/devikerhdez/ProyectoInterModularAppCaf",
+        "live": "https://proyecto-inter-modular-app-caf.vercel.app",
+        "preview": "https://proyecto-inter-modular-app-caf.vercel.app"
       },
       {
         "id": 2,
-        "name": "Aether API",
-        "description": "Servicio backend de alto rendimiento con documentación exhaustiva. Integración de caché Redis y un enfoque de microservicios escalable.",
-        "year": "2025"
+        "name": "D'Agenda",
+        "description": "Una app web que funciona como agenda virtual, con un sistema de recordatorios y notificaciones clásico ya que no todos se terminan de hacer a las que implementan los sistemas modernos.",
+        "stack": ["React", "Go", "TypeScript", "Tailwind CSS", "PostgreSQL", "Docker", "Linux", "Nginx"],
+        "year": "2026",
+        "github": "https://github.com/devikerhdez/agenda-iker",
+        "live": "http://212.227.227.231:3000",
+        "preview": "http://212.227.227.231:3000"
       },
       {
         "id": 3,
-        "name": "Nexus UI",
-        "description": "Una biblioteca de componentes React de código abierto centrada en temas brutalistas y oscuros. Altamente personalizable y construida completamente desde cero usando CSS.",
-        "year": "2024"
+        "name": "CRM de LU(G)AR GESTIÓN CULTURAL",
+        "description": "Realización de un CRM para la gestión completa de la actividad de la empresa, desde 0 con multiples modulos desarrollados como fichaje con geolocalizacion, conexión con api externa para obtención de contratos de sevicios interesantes para la empresa, etc.",
+        "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Docker", "PostgreSQL", "Linux", "Nginx"],
+        "year": "2025",
+        "github": "https://github.com/devikerhdez/crm-lugar-gestion-cultural",
+        "live": "https://nexus-ui.design",
+        "preview": "https://nexus-ui.design"
       }
     ]
   },
+  "Tech": {
+    "title": "TECNOLOGÍAS",
+    "stack": {
+      "title": "Stack",
+      "items": ["Java", "Spring Boot", "React", "JavaScript", "TypeScript", "Express", "PHP", "Laravel", "GitHub", "Tailwind CSS", "PostgreSQL", "MongoDB", "Supabase", "Linux", "Nginx", "Agentes de IA"]
+    },
+    "knowledge": {
+      "title": "Conocimiento",
+      "items": ["Python", "Docker", "Go", "Kotlin"]
+    },
+    "interested": {
+      "title": "Interesado",
+      "items": ["Kubernetes", "C++"]
+    }
+  },
   "Footer": {
-    "copyright": "© 2026 Iker Hernández Santana. Todos los derechos reservados.",
-    "builtBy": "Diseñado y construido por Iker Hernández Santana"
+    "builtBy": "Diseñado y desarrollado por Iker Hernández Santana"
   }
 }

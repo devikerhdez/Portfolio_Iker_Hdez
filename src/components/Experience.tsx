@@ -17,7 +17,7 @@ export default function Experience() {
     <section id="experience" className="min-h-screen py-24 px-6 relative z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2 
-          className="text-6xl md:text-8xl font-display text-red-primary mb-16"
+          className="text-6xl md:text-8xl font-display text-white mb-16"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}

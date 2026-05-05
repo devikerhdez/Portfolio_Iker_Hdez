@@ -43,6 +43,7 @@ export default function Navbar() {
   const navItems = [
     { key: 'about', id: 'about' },
     { key: 'experience', id: 'experience' },
+    { key: 'stack', id: 'tech' },
     { key: 'projects', id: 'projects' },
     { key: 'contact', id: 'contact' },
   ];
