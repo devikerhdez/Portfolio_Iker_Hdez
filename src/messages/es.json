@@ -58,6 +58,16 @@
       },
       {
         "id": 2,
+        "name": "CRM de LU(G)AR GESTIÓN CULTURAL",
+        "description": "Realización de un CRM para la gestión completa de la actividad de la empresa, desde 0 con multiples modulos desarrollados como fichaje con geolocalizacion, conexión con api externa para obtención de contratos de sevicios interesantes para la empresa, etc.",
+        "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Docker", "PostgreSQL", "Linux", "Nginx"],
+        "year": "2025",
+        "github": "https://github.com/devikerhdez/crm-lugar-gestion-cultural",
+        "live": "https://nexus-ui.design",
+        "preview": "https://nexus-ui.design"
+      },
+      {
+        "id": 3,
         "name": "D'Agenda",
         "description": "Una app web que funciona como agenda virtual, con un sistema de recordatorios y notificaciones clásico ya que no todos se terminan de hacer a las que implementan los sistemas modernos.",
         "stack": ["React", "Go", "TypeScript", "Tailwind CSS", "PostgreSQL", "Docker", "Linux", "Nginx"],
@@ -67,14 +77,14 @@
         "preview": "http://212.227.227.231:3000"
       },
       {
-        "id": 3,
-        "name": "CRM de LU(G)AR GESTIÓN CULTURAL",
-        "description": "Realización de un CRM para la gestión completa de la actividad de la empresa, desde 0 con multiples modulos desarrollados como fichaje con geolocalizacion, conexión con api externa para obtención de contratos de sevicios interesantes para la empresa, etc.",
-        "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Docker", "PostgreSQL", "Linux", "Nginx"],
-        "year": "2025",
-        "github": "https://github.com/devikerhdez/crm-lugar-gestion-cultural",
-        "live": "https://nexus-ui.design",
-        "preview": "https://nexus-ui.design"
+        "id": 4,
+        "name": "Este portfolio",
+        "description": "Este portfolio está realizado con React, TypeScript, Tailwind CSS, Vite y HTML. Además de tener la funcionalidad de cambiar entre inglés y español.",
+        "stack": ["Tailwind CSS", "Vite", "React", "TypeScript"],
+        "year": "2026",
+        "github": "https://github.com/devikerhdez/Portfolio_Iker_Hdez",
+        "live": "https://devikerhdez.github.io",
+        "preview": "https://devikerhdez.github.io"
       }
     ]
   },
