@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Maximize, Minimize, X, Download, ChevronUp, RefreshCw } from 'lucide-react';
 
@@ -38,6 +38,34 @@ export default function VideoPreviewModal({
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Video Event Handlers
+  const handlePlayPause = useCallback(() => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+  // Handle auto-hiding controls
+  const resetControlsTimeout = useCallback(() => {
+    if (controlsTimeoutRef.current) {
+      window.clearTimeout(controlsTimeoutRef.current);
+    }
+    controlsTimeoutRef.current = window.setTimeout(() => {
+      setShowControls(false);
+      setShowSpeedMenu(false);
+    }, 2500);
+  }, []);
+
+  const togglePlay = useCallback(() => {
+    handlePlayPause();
+    resetControlsTimeout();
+  }, [handlePlayPause, resetControlsTimeout]);
+
   // Keyboard controls
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -51,52 +79,19 @@ export default function VideoPreviewModal({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, togglePlay]);
 
-  // Handle auto-hiding controls
-  const resetControlsTimeout = () => {
-    setShowControls(true);
-    if (controlsTimeoutRef.current) {
-      window.clearTimeout(controlsTimeoutRef.current);
-    }
-    controlsTimeoutRef.current = window.setTimeout(() => {
-      if (isPlaying) {
-        setShowControls(false);
-        setShowSpeedMenu(false);
-      }
-    }, 2500);
-  };
-
+  // Handle auto-hiding controls effect
   useEffect(() => {
     if (isPlaying) {
       resetControlsTimeout();
-    } else {
-      setShowControls(true);
-      if (controlsTimeoutRef.current) {
-        window.clearTimeout(controlsTimeoutRef.current);
-      }
+    } else if (controlsTimeoutRef.current) {
+      window.clearTimeout(controlsTimeoutRef.current);
     }
     return () => {
       if (controlsTimeoutRef.current) window.clearTimeout(controlsTimeoutRef.current);
     };
-  }, [isPlaying]);
-
-  // Video Event Handlers
-  const handlePlayPause = () => {
-    if (!videoRef.current) return;
-    if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    } else {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const togglePlay = () => {
-    handlePlayPause();
-    resetControlsTimeout();
-  };
+  }, [isPlaying, resetControlsTimeout]);
 
   const handleTimeUpdate = () => {
     if (!videoRef.current) return;

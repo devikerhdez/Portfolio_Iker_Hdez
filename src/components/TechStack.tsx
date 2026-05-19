@@ -7,7 +7,13 @@ import {
   SiSpringboot, SiTypescript, SiExpress, SiGithub, SiTailwindcss, SiGo, SiKubernetes, SiCplusplus, SiPostgresql, SiMongodb, SiSupabase,  SiNginx, SiKotlin
 } from 'react-icons/si';
 
-const iconMap: Record<string, { icon: any, color: string, useOriginal?: boolean }> = {
+interface IconComponentProps {
+  size?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const iconMap: Record<string, { icon: React.ComponentType<IconComponentProps>, color: string, useOriginal?: boolean }> = {
   // Stack
   "Java": { icon: FaJava, color: "#ed8b00" },
   "Spring Boot": { icon: SiSpringboot, color: "#6db33f" },
@@ -25,7 +31,7 @@ const iconMap: Record<string, { icon: any, color: string, useOriginal?: boolean 
   "AI Agents": { icon: FaRobot, color: "#ff0000" },
   "Supabase": { icon: SiSupabase, color: "#3fc1a8" },
   "Linux": { 
-    icon: (props: any) => (
+    icon: (props: IconComponentProps) => (
       <img 
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" 
         alt="Linux" 
@@ -40,7 +46,7 @@ const iconMap: Record<string, { icon: any, color: string, useOriginal?: boolean 
   // Knowledge
   "Python": { icon: FaPython, color: "#3776ab" },
   "Docker": { 
-    icon: (props: any) => (
+    icon: (props: IconComponentProps) => (
       <img 
         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" 
         alt="Docker" 
