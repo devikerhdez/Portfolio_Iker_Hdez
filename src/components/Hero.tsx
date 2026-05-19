@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 pt-16 sm:pt-20"
     >
       {/* Huge background text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
@@ -21,7 +21,7 @@ export default function Hero() {
         </motion.h1>
       </div>
 
-      <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 items-center">
+      <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-8 items-center">
         {/* Texts */}
         <div className="order-2 md:order-1 flex flex-col items-start gap-4">
           <motion.div
@@ -32,22 +32,22 @@ export default function Hero() {
             <h2 className="text-lg md:text-xl text-gray-400 mb-2 font-mono uppercase tracking-widest">
               {t('Hero.role')}
             </h2>
-            <h1 className="text-6xl md:text-8xl font-display leading-[0.9] mb-8 animate-glitch relative inline-block text-white">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-display leading-[0.9] mb-6 sm:mb-8 animate-glitch relative inline-block text-white">
               {t('Hero.fullName')}
             </h1>
-            <p className="text-base md:text-lg text-gray-400 max-w-md italic border-l-2 border-red-primary pl-4 py-1 leading-relaxed text-justify">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-md italic border-l-2 border-red-primary pl-3 sm:pl-4 py-1 leading-relaxed text-justify">
               {t('Hero.description')}
             </p>
           </motion.div>
         </div>
 
         {/* Photo */}
-        <div className="order-1 md:order-2 flex items-center justify-center md:justify-end mt-8 md:mt-0">
+        <div className="order-1 md:order-2 flex items-center justify-center md:justify-end mt-4 sm:mt-8 md:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative w-[280px] h-[360px] md:w-[350px] md:h-[450px]"
+            className="relative w-[220px] h-[280px] sm:w-[280px] sm:h-[360px] md:w-[350px] md:h-[450px]"
           >
             <div className="absolute inset-0 bg-red-primary/20 animate-pulse-red rounded-tr-[30%] rounded-bl-[40%] rounded-tl-[10%] rounded-br-[20%] blur-md pointer-events-none"></div>
             <div className="w-full h-full overflow-hidden rounded-tr-[30%] rounded-bl-[40%] rounded-tl-[10%] rounded-br-[20%] relative z-10 border border-red-primary/30 bg-[#111] shadow-[0_0_50px_rgba(204,0,0,0.15)] group">

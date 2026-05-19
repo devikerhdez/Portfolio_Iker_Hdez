@@ -64,13 +64,13 @@ export default function TechStack() {
   const categories = ['stack', 'knowledge', 'interested'];
 
   return (
-    <section id="tech" className="min-h-screen px-6 relative z-10 border-t border-white/5 bg-[#000000] scroll-mt-24 py-24">
+    <section id="tech" className="min-h-screen px-4 sm:px-6 relative z-10 border-t border-white/5 bg-[#000000] scroll-mt-24 py-16 sm:py-24">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10 w-full">
         <motion.h2 
-          className="text-6xl md:text-8xl font-display text-white mb-16 text-center"
+          className="text-5xl sm:text-6xl md:text-8xl font-display text-white mb-10 sm:mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -79,7 +79,7 @@ export default function TechStack() {
           {t('Tech.title')}
         </motion.h2>
 
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-12 sm:gap-20">
           {categories.map((catKey, catIdx) => {
             const items = t(`Tech.${catKey}.items`, { returnObjects: true }) as string[];
             const title = t(`Tech.${catKey}.title`);
@@ -93,14 +93,14 @@ export default function TechStack() {
                   transition={{ delay: 0.3 }}
                   className="mb-8 flex items-center gap-4"
                 >
-                  <div className="h-px w-8 md:w-16 bg-linear-gradient-to-r from-transparent to-gray-800"></div>
-                  <h3 className="text-[10px] tracking-[0.5em] uppercase font-mono text-gray-600 whitespace-nowrap">
+                  <div className="h-px w-6 sm:w-8 md:w-16 bg-linear-gradient-to-r from-transparent to-gray-800"></div>
+                  <h3 className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.5em] uppercase font-mono text-gray-600 whitespace-nowrap">
                     {title}
                   </h3>
-                  <div className="h-px w-8 md:w-16 bg-linear-gradient-to-l from-transparent to-gray-800"></div>
+                  <div className="h-px w-6 sm:w-8 md:w-16 bg-linear-gradient-to-l from-transparent to-gray-800"></div>
                 </motion.div>
 
-                <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-4xl mx-auto">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 max-w-4xl mx-auto">
                   {Array.isArray(items) && items.map((item, i) => {
                     const tech = iconMap[item] || { icon: FaRobot, color: "#CC0000" };
                     const Icon = tech.icon;

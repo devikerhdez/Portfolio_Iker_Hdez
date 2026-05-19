@@ -31,9 +31,11 @@
   }
 }
 
-/* Force custom cursor globally */
-* {
-  cursor: none !important;
+/* Force custom cursor on desktop only */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }
 
 /* Background noise texture */
@@ -48,6 +50,126 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
   z-index: 50;
   opacity: 0.15;
+}
+
+/* ==================== LIGHT MODE ==================== */
+.light-mode {
+  background-color: #ffffff;
+}
+
+/* Noise texture - disable in light mode */
+html.light-mode body::after {
+  opacity: 0;
+}
+
+/* Scrollbar - light mode */
+html.light-mode ::-webkit-scrollbar-track {
+  background: #e8e8e8;
+}
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: #bbb;
+}
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-red-primary);
+}
+
+/* Section backgrounds */
+.light-mode,
+.light-mode .bg-black {
+  background-color: #ffffff;
+}
+
+/* Match all Tailwind arbitrary background classes like bg-[#xxxxxx] */
+.light-mode [class*="bg-[#"]:not([class*="bg-[#0d0d0d]"]) {
+  background-color: #ffffff;
+}
+
+.light-mode [class*="bg-[#0d0d0d]"] {
+  background-color: #f0f0f0;
+}
+
+/* Black opacity backgrounds → white opacity backgrounds */
+.light-mode .bg-black\/95 { background-color: rgba(255,255,255,0.95); }
+.light-mode .bg-black\/90 { background-color: rgba(255,255,255,0.9); }
+.light-mode .bg-black\/80 { background-color: rgba(255,255,255,0.8); }
+.light-mode .bg-black\/60 { background-color: rgba(255,255,255,0.6); }
+.light-mode .bg-black\/50 { background-color: rgba(255,255,255,0.5); }
+.light-mode .bg-black\/40 { background-color: rgba(255,255,255,0.4); }
+.light-mode .bg-black\/30 { background-color: rgba(255,255,255,0.3); }
+.light-mode .bg-black\/20 { background-color: rgba(255,255,255,0.2); }
+
+/* White opacity backgrounds → black opacity backgrounds (for cards/buttons) */
+.light-mode .bg-white\/5 { background-color: rgba(0,0,0,0.05); }
+.light-mode .bg-white\/10 { background-color: rgba(0,0,0,0.1); }
+.light-mode .bg-white\/20 { background-color: rgba(0,0,0,0.2); }
+.light-mode .bg-white\/30 { background-color: rgba(0,0,0,0.3); }
+.light-mode .bg-white\/\[\.\d+\] { background-color: rgba(0,0,0,0.05); }
+
+/* Text colors: white→black, grays→darker grays */
+.light-mode .text-white { color: #000000; }
+.light-mode .text-gray-300 { color: #2a2a2a; }
+.light-mode .text-gray-400 { color: #444444; }
+.light-mode .text-gray-500 { color: #666666; }
+.light-mode .text-gray-600 { color: #888888; }
+.light-mode .text-zinc-100 { color: #111111; }
+.light-mode .text-zinc-600 { color: #777777; }
+
+/* Red stays red */
+.light-mode .text-red-primary,
+.light-mode .text-red-glow {
+  color: var(--color-red-primary);
+}
+
+/* Border colors: white→black */
+.light-mode .border-white\/5 { border-color: rgba(0,0,0,0.05); }
+.light-mode .border-white\/10 { border-color: rgba(0,0,0,0.1); }
+.light-mode .border-white\/20 { border-color: rgba(0,0,0,0.2); }
+.light-mode .border-white\/30 { border-color: rgba(0,0,0,0.3); }
+.light-mode .border-white\/40 { border-color: rgba(0,0,0,0.4); }
+.light-mode .border-white\/\[\.\d+\] { border-color: rgba(0,0,0,0.1); }
+
+/* Gradient overrides for video controls */
+.light-mode .from-black\/95 {
+  --tw-gradient-from: rgba(255,255,255,0.95) !important;
+}
+.light-mode .via-black\/80 {
+  --tw-gradient-via: rgba(255,255,255,0.8) !important;
+}
+
+/* Gradient divider lines in TechStack */
+.light-mode .to-gray-800 {
+  --tw-gradient-to: #d1d5db !important;
+}
+
+/* Red glow backgrounds - override to stay red but lighter */
+.light-mode .bg-red-primary\/10 { background-color: rgba(204,0,0,0.06); }
+.light-mode .bg-red-primary\/20 { background-color: rgba(204,0,0,0.1); }
+.light-mode .bg-red-primary\/5 { background-color: rgba(204,0,0,0.03); }
+
+/* section border tops */
+.light-mode .border-t-white\/5 { border-top-color: rgba(0,0,0,0.05); }
+
+/* Ambient glow in Contact section - lighter in light mode */
+.light-mode [class*="bg-[radial-gradient"] {
+  opacity: 0.15;
+}
+
+/* Body override for light mode */
+html.light-mode body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Glitch animation - adapt for light mode */
+@keyframes glitch-light {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); color: var(--color-red-glow); }
+  40% { transform: translate(2px, -2px); color: #000; }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+}
+.light-mode .animate-glitch {
+  animation-name: glitch-light;
 }
 
 ::-webkit-scrollbar {

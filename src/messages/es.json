@@ -10,11 +10,12 @@
     "bgName": "IKER",
     "role": "Programador Full Stack",
     "fullName": "Iker Hernández Santana",
-    "description": "Centrado en la escalabilidad y el código limpio. Transformo problemas complejos en soluciones eficientes mediante stacks modernos, siempre buscando nuevas maneras de superarme.",
+    "description": "Apasionado del software y comprometido con mi trabajo. Me centro en la escalabilidad, las buenas prácticas y el código limpio. En constante aprendizaje para seguir superando mis límites y aportar valor real en cada proyecto.",
     "scroll": "SCROLL"
   },
   "Experience": {
     "title": "EXPERIENCIA",
+    "comingSoon": "¿Sumamos tu proyecto a la lista?",
     "items": [
       {
         "id": 1,
@@ -45,6 +46,8 @@
     "viewLess": "Menos info",
     "repo": "Código",
     "live": "En vivo",
+    "alreadyHere": "¡Ya estás en él!",
+    "comingSoon": "Próximamente más y mejor.",
     "items": [
       {
         "id": 1,
@@ -52,19 +55,19 @@
         "description": "Una app web enfocada en la digitalización de las cafeterías escolares, mejorando la productividad de los trabajadores y la experiencia de los alumnos.",
         "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Supabase", "Docker", "Vercel", "Render"],
         "year": "2026",
-        "github": "https://github.com/devikerhdez/ProyectoInterModularAppCaf",
+        "github": "https://github.com/devikerhdez/ProyectiFinCiclo",
         "live": "https://proyecto-inter-modular-app-caf.vercel.app",
-        "preview": "https://proyecto-inter-modular-app-caf.vercel.app"
+        "preview": "Demo-caf.hevc.mp4"
       },
       {
         "id": 2,
         "name": "CRM de LU(G)AR GESTIÓN CULTURAL",
         "description": "Realización de un CRM para la gestión completa de la actividad de la empresa, desde 0 con multiples modulos desarrollados como fichaje con geolocalizacion, conexión con api externa para obtención de contratos de sevicios interesantes para la empresa, etc.",
         "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Docker", "PostgreSQL", "Linux", "Nginx"],
-        "year": "2025",
-        "github": "https://github.com/devikerhdez/crm-lugar-gestion-cultural",
+        "year": "2026",
+        "github": "https://github.com/devikerhdez/CRM_LUGAR_PROD",
         "live": "https://nexus-ui.design",
-        "preview": "https://nexus-ui.design"
+        "preview": "demo-crm-lugar.hevc.mp4"
       },
       {
         "id": 3,
@@ -74,17 +77,17 @@
         "year": "2026",
         "github": "https://github.com/devikerhdez/agenda-iker",
         "live": "http://212.227.227.231:3000",
-        "preview": "http://212.227.227.231:3000"
+        "preview": "demo-dagenda.hevc.mp4"
       },
       {
         "id": 4,
-        "name": "Este portfolio",
-        "description": "Este portfolio está realizado con React, TypeScript, Tailwind CSS, Vite y HTML. Además de tener la funcionalidad de cambiar entre inglés y español.",
+        "name": "Iker Hernández Santana - Portfolio",
+        "description": "Portfolio realizado con React, TypeScript, Tailwind CSS, Vite. Además de tener la funcionalidad de cambiar entre inglés y español.",
         "stack": ["Tailwind CSS", "Vite", "React", "TypeScript"],
         "year": "2026",
         "github": "https://github.com/devikerhdez/Portfolio_Iker_Hdez",
         "live": "https://devikerhdez.github.io",
-        "preview": "https://devikerhdez.github.io"
+        "preview": "portfolio_special"
       }
     ]
   },
@@ -102,6 +105,28 @@
       "title": "Interesado",
       "items": ["Kubernetes", "C++"]
     }
+  },
+  "Contact": {
+    "title": "CONTACTO",
+    "subtitle": "Hablemos de tu próximo proyecto",
+    "tagline": "Disponible para nuevas oportunidades y colaboraciones. Si buscas a alguien comprometido, ¡hablemos!",
+    "status": "DISPONIBLE PARA NUEVOS PROYECTOS",
+    "locationLabel": "Ubicación",
+    "locationValue": "Gran Canaria, Islas Canarias, España",
+    "emailLabel": "Enviar Email",
+    "copyButton": "Copiar",
+    "copiedButton": "¡Copiado!",
+    "formName": "Tu nombre",
+    "formEmail": "Tu correo electrónico",
+    "formSubject": "Asunto",
+    "formMessage": "Cuéntame sobre tu proyecto...",
+    "formSubmit": "Enviar mensaje",
+    "terminalHeader": "CONEXIÓN DE TRANSMISIÓN DE DATOS",
+    "terminalInit": "Inicializando canal seguro...",
+    "terminalPacking": "Empaquetando datos...",
+    "terminalRouting": "Enrutando transmisión a devikerhdez@gmail.com...",
+    "terminalSuccess": "¡Transmisión enviada con éxito! Responderé lo antes posible. 🚀",
+    "terminalReset": "Enviar otro mensaje"
   },
   "Footer": {
     "builtBy": "Diseñado y desarrollado por Iker Hernández Santana"
