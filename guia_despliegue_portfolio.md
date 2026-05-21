@@ -65,7 +65,7 @@ docker compose ps
 
 ### 2.4 Verificar que funciona
 
-Abre en el navegador: `http://212.227.227.231:3000`
+Abre en el navegador: `http://212.227.227.231:8443`
 
 ---
 
@@ -102,6 +102,14 @@ Si tienes un dominio (ej: `ikerhdez.com`), puedes apuntarlo al portfolio:
 
 ## Arquitectura final
 
+```
+Servidor 212.227.227.231
+├── Puerto 80/443 → Nginx Proxy Manager (ya existe)
+│   ├── agenda-iker (frontend + backend)
+│   └── portfolio → :8443
+├── Puerto 8443 → Portfolio (contenedor Docker)
+├── Puerto 8080 → Agenda Backend (contenedor Docker)
+└── Puerto 22 → SSH
 ```
 Servidor 212.227.227.231
 ├── Puerto 80/443 → Nginx Proxy Manager

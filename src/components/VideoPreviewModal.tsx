@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Maximize, Minimize, X, Download, ChevronUp, RefreshCw } from 'lucide-react';
 
@@ -44,6 +45,7 @@ export default function VideoPreviewModal({
     if (videoRef.current.paused) {
       videoRef.current.play();
       setIsPlaying(true);
+      setShowControls(true);
     } else {
       videoRef.current.pause();
       setIsPlaying(false);
@@ -164,13 +166,13 @@ export default function VideoPreviewModal({
 
   const speeds = [0.5, 1.0, 1.25, 1.5, 2.0];
 
-  return (
+  return createPortal(
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex flex-col bg-black/90 backdrop-blur-md select-none font-mono"
+        className="fixed inset-0 z-[9999] flex flex-col bg-black/90 backdrop-blur-md select-none font-mono"
         onMouseMove={resetControlsTimeout}
       >
         {/* Top Gmail-like Navigation/Header */}
@@ -369,6 +371,7 @@ export default function VideoPreviewModal({
           </motion.div>
         </div>
       </motion.div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

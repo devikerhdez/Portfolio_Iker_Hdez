@@ -3,4 +3,4 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - "3000:80"
+      - "8443:80"

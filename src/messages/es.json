@@ -56,7 +56,7 @@
         "stack": ["React", "Spring Boot", "TypeScript", "Tailwind CSS", "Supabase", "Docker", "Vercel", "Render"],
         "year": "2026",
         "github": "https://github.com/devikerhdez/ProyectiFinCiclo",
-        "live": "https://proyecto-inter-modular-app-caf.vercel.app",
+        "live": "http://proyectos2dam.duckdns.org:8081/",
         "preview": "Demo-caf.hevc.mp4"
       },
       {

@@ -91,7 +91,7 @@ export default function TechStack() {
             const title = t(`Tech.${catKey}.title`);
 
             return (
-              <div key={catKey} className="flex flex-col items-center">
+              <div key={catKey} className="flex flex-col items-center w-full">
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -99,16 +99,16 @@ export default function TechStack() {
                   transition={{ delay: 0.3 }}
                   className="mb-8 flex items-center gap-4"
                 >
-                  <div className="h-px w-6 sm:w-8 md:w-16 bg-linear-gradient-to-r from-transparent to-gray-800"></div>
+                  <div className="h-px w-6 sm:w-8 md:w-16 bg-gradient-to-r from-transparent to-gray-800"></div>
                   <h3 className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.5em] uppercase font-mono text-gray-600 whitespace-nowrap">
                     {title}
                   </h3>
-                  <div className="h-px w-6 sm:w-8 md:w-16 bg-linear-gradient-to-l from-transparent to-gray-800"></div>
+                  <div className="h-px w-6 sm:w-8 md:w-16 bg-gradient-to-l from-transparent to-gray-800"></div>
                 </motion.div>
 
-                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 max-w-4xl mx-auto">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 max-w-4xl mx-auto w-full">
                   {Array.isArray(items) && items.map((item, i) => {
-                    const tech = iconMap[item] || { icon: FaRobot, color: "#CC0000" };
+                    const tech = iconMap[item] || { icon: FaRobot, color: "#CC0000", useOriginal: false };
                     const Icon = tech.icon;
 
                     return (
@@ -134,7 +134,7 @@ export default function TechStack() {
                         {/* Card Container */}
                         <div className="relative w-14 h-14 md:w-20 md:h-20 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:border-white/20 group-hover:bg-white/10 transition-all duration-500 backdrop-blur-md overflow-hidden">
                           {/* Inner Gradient Reflection */}
-                          <div className="absolute inset-0 bg-linear-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+                           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
                           
                           <Icon 
                             size={28} 
