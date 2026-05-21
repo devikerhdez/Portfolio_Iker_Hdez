@@ -141,7 +141,7 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-8">
             
             {/* Tagline */}
-            <p className="text-gray-300 text-lg leading-relaxed font-light text-justify">
+            <p className="text-gray-300 text-base leading-relaxed font-light">
               {t('Contact.tagline')}
             </p>
 

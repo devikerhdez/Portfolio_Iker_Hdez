@@ -35,7 +35,7 @@ export default function Hero() {
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-display leading-[0.9] mb-6 sm:mb-8 animate-glitch relative inline-block text-white">
               {t('Hero.fullName')}
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-md italic border-l-2 border-red-primary pl-3 sm:pl-4 py-1 leading-relaxed text-justify">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-md italic border-l-2 border-red-primary pl-3 sm:pl-4 py-1 leading-relaxed">
               {t('Hero.description')}
             </p>
           </motion.div>

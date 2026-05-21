@@ -69,7 +69,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 sm:px-6 py-4 flex justify-between items-center ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 flex justify-between items-center ${
           scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-4 sm:py-6'
         }`}
       >
@@ -109,13 +109,13 @@ export default function Navbar() {
             onClick={toggleLanguage}
             className="text-xs sm:text-sm tracking-widest font-mono uppercase text-gray-400 hover:text-white transition-all cursor-pointer focus:outline-none flex gap-2 sm:gap-3 items-center group"
           >
-            <div className="flex items-center gap-1.5 border border-white/10 px-2 py-1 rounded-sm group-hover:border-red-primary/50 transition-colors bg-white/5">
-              <span className={`flex items-center gap-1.5 ${i18n.language.startsWith('en') ? 'text-red-primary font-bold' : 'opacity-40'}`}>
-                <UKFlag /> EN
+            <div className="flex items-center gap-1 sm:gap-1.5 border border-white/10 px-1.5 sm:px-2 py-1 rounded-sm group-hover:border-red-primary/50 transition-colors bg-white/5">
+              <span className={`flex items-center gap-1 sm:gap-1.5 ${i18n.language.startsWith('en') ? 'text-red-primary font-bold' : 'opacity-40'}`}>
+                <UKFlag /><span className="hidden sm:inline">EN</span>
               </span>
               <span className="opacity-20 text-[10px]">|</span>
-              <span className={`flex items-center gap-1.5 ${i18n.language.startsWith('es') ? 'text-red-primary font-bold' : 'opacity-40'}`}>
-                ES <ESFlag />
+              <span className={`flex items-center gap-1 sm:gap-1.5 ${i18n.language.startsWith('es') ? 'text-red-primary font-bold' : 'opacity-40'}`}>
+                <span className="hidden sm:inline">ES</span><ESFlag />
               </span>
             </div>
           </button>
