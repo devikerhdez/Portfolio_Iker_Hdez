@@ -3,4 +3,7 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - "8443:80"
+      - "8443:3001"
+    environment:
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_FROM=${RESEND_FROM}

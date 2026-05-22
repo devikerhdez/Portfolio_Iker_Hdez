@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Mail, MapPin, Copy, Check, Send, Terminal, RefreshCw, FileText } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-// 1. Importamos la librería del SDK de EmailJS
-import emailjs from '@emailjs/browser';
 
 type TerminalLine = {
   text: string;
@@ -38,40 +36,34 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // 2. Manejador de envío actualizado con EmailJS y manejo de errores asíncronos
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    // Iniciamos la animación de la terminal simulando la conexión inicial
     setStatus('sending');
     setTerminalLines([
       { text: `[sys@ihs-terminal ~]$ ./send_message.sh --from="${formData.name}"`, type: 'command' },
       { text: t('Contact.terminalInit') || 'Initializing secure connection...', type: 'info' }
     ]);
 
-    // Mapeo de las variables que configuraste en tu plantilla de EmailJS
-    const templateParams = {
-      from_name: formData.name,
-      reply_to: formData.email,
-      subject: formData.subject || 'Contacto Portfolio',
-      message: formData.message,
-    };
-
     try {
-      // Envío de datos real utilizando tus variables de entorno seguras (Clave PÚBLICA)
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || 'Contacto Portfolio',
+          message: formData.message,
+        }),
+      });
 
-      // Si el servidor responde correctamente, disparamos el resto de la simulación visual
+      if (!response.ok) throw new Error('Failed to send');
+
       const logs = [
         { text: t('Contact.terminalPacking') || 'Packing encrypted data packets...', type: 'info' as const },
-        { text: t('Contact.terminalRouting') || 'Routing via EmailJS cloud relay...', type: 'info' as const },
-        { text: t('Contact.terminalSuccess') || 'Message transmitted successfully via Gmail service.', type: 'success' as const }
+        { text: t('Contact.terminalRouting') || 'Routing via Resend cloud relay...', type: 'info' as const },
+        { text: t('Contact.terminalSuccess') || 'Message transmitted successfully.', type: 'success' as const }
       ];
 
       logs.forEach((log, index) => {
@@ -80,20 +72,18 @@ export default function Contact() {
           if (index === logs.length - 1) {
             setStatus('success');
           }
-        }, (index + 1) * 600); // 600ms de retraso entre cada línea para dar efecto hacker fluido
+        }, (index + 1) * 600);
       });
 
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Contact Error:', error);
       
-      // En caso de que falle la petición, se lo notificamos al usuario en la terminal
       setTerminalLines(prev => [
         ...prev,
         { text: '[ERROR] Connection timeout. Transmission aborted.', type: 'info' },
         { text: '[SYS] Please try again or copy email address directly.', type: 'info' }
       ]);
       
-      // Regresamos el formulario al estado original tras 4 segundos para que pueda reintentar
       setTimeout(() => setStatus('idle'), 4000);
     }
   };
