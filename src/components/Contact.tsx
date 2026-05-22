@@ -222,8 +222,7 @@ export default function Contact() {
               </a>
               <a 
                 href="/iker_cv.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                download="CV Iker Hernández Santana DEV.pdf"
                 className="p-4 border border-white/5 bg-black/30 hover:border-red-primary/40 hover:bg-red-primary/5 text-gray-400 hover:text-white rounded text-center transition-all flex flex-col items-center justify-center gap-2 group cursor-pointer"
               >
                 <FileText size={20} className="group-hover:scale-110 transition-transform" />
