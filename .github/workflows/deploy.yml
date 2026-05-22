@@ -16,6 +16,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /root/apps/Portfolio_Iker_Hdez
+
+            # Write .env from GitHub Secrets (safe, never in git)
+            printf 'RESEND_API_KEY=%s\nRESEND_FROM=%s\n' \
+              '${{ secrets.RESEND_API_KEY }}' \
+              '${{ secrets.RESEND_FROM }}' > .env
+
             git pull origin main
             docker compose up -d --build
             docker image prune -f
