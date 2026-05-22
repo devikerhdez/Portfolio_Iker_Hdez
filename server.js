@@ -13,7 +13,7 @@ const app  = express();
 const PORT = process.env.PORT || 3001;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const FROM   = process.env.RESEND_FROM || 'portfolio@send.ikerhdezsant.com';
+const FROM   = process.env.RESEND_FROM || 'portfolio@ikerhdezsant.com';
 const TO     = 'devikerhdez@gmail.com';
 
 app.use(express.json());
